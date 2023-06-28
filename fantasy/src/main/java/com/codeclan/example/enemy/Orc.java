@@ -1,20 +1,16 @@
 package com.codeclan.example.enemy;
 
-public class Orc extends Enemy{
+import com.codeclan.example.ITargetable;
+import com.codeclan.example.character.Character;
+
+public class Orc extends Enemy {
     private final EnemyReward enemyReward;
     public Orc(int attack, int health, boolean alive, EnemyReward enemyReward) {
         super(attack, health, alive);
         this.enemyReward = EnemyReward.HP;
     }
 
-    public EnemyReward getReward() {
-        return enemyReward;
+    public int getReward() {
+        return enemyReward.getValue();
     }
-
-    public void giveReward(Character character) {
-        // character.mp += enemy.reward.value
-    }
-
-
-
 }

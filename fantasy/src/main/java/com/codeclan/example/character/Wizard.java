@@ -24,6 +24,11 @@ public class Wizard extends Character implements IHealable {
     public MythicalCreature getSelectedCreature() {
         return selectedCreature;
     }
+
+    public Spells getSelectedSpell() {
+        return selectedSpell;
+    }
+
     public void castSpell(ITargetable target){
         int damage = getSpellPower() + selectedSpell.getDamage();
         selectedCreature.attack(target);

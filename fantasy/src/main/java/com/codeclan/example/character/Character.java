@@ -78,6 +78,10 @@ public abstract class Character implements IHealable {
         this.health = health;
     }
 
+    public void setMana(int mana) {
+        this.mana = mana;
+    }
+
     public void getHealed(int value) {
         int newHealth = health + value;
         if (newHealth >= maxHealth){
