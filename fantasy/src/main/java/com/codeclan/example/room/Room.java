@@ -1,5 +1,7 @@
 package com.codeclan.example.room;
 
+import com.codeclan.example.character.Character;
+
 import java.util.ArrayList;
 
 public class Room {

@@ -1,12 +1,14 @@
 package com.codeclan.example.weapons;
 
-public class Weapon {
+public class Weapon{
     private String name;
     private int damage;
+    private int sellPrice;
 
-    public Weapon(String name, int damage) {
+    public Weapon(String name, int damage, int sellPrice) {
         this.name = name;
         this.damage = damage;
+        this.sellPrice = sellPrice;
     }
 
     public String getName() {
@@ -23,5 +25,9 @@ public class Weapon {
 
     public void setDamage(int damage) {
         this.damage = damage;
+    }
+
+    public int getSellPrice() {
+        return sellPrice;
     }
 }

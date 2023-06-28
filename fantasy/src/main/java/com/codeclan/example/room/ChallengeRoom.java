@@ -1,5 +1,6 @@
 package com.codeclan.example.room;
 
+import com.codeclan.example.character.Character;
 import com.codeclan.example.enemy.Enemy;
 
 import java.util.ArrayList;

@@ -1,6 +1,8 @@
 package com.codeclan.example.mythical_creature;
 
-public abstract class MythicalCreature {
+import com.codeclan.example.ITargetable;
+
+public abstract class MythicalCreature  implements ITargetable{
     private String name;
     private int attackPower;
     private int health;
@@ -41,9 +43,9 @@ public abstract class MythicalCreature {
     }
     public void attack(ITargetable target){
         int damage = getAttack();
-        target.recieveDamage(damage);
+        target.receiveDamage(damage);
     }
-    public void recieveDamage(int damage){
+    public void receiveDamage(int damage){
         setHealth(getHealth() - damage);
         if (getHealth() < 1) {
             setAlive(false);

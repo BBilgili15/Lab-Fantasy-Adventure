@@ -1,8 +1,10 @@
 package com.codeclan.example.room;
 
-import com.codeclan.example.enemy.Enemy;
+import com.codeclan.example.character.Character;
+
 
 import java.util.ArrayList;
+
 
 public class RewardRoom extends Room {
     private int roomReward;
@@ -17,10 +19,11 @@ public class RewardRoom extends Room {
         return roomReward;
     }
 
+
     public String openChest() {
         int rewardPerCharacter = getRoomReward() / getCharacters().size();
-        for (Character character: this.getCharacters()) {
-            character.bag.add(rewardPerCharacter);
+        for (Character character: getCharacters()) {
+            character.collectReward(rewardPerCharacter);
         }
         return "All characters received " + rewardPerCharacter + " gems.";
     }

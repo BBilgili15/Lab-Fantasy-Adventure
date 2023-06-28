@@ -1,5 +1,6 @@
 package com.codeclan.example;
 
 public interface IHealable {
-    public void getHealed();
+    public void getHealed(int value);
+
 }
