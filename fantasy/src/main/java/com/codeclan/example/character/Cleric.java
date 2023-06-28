@@ -30,4 +30,14 @@ public class Cleric extends Character{
             setAlive(false);
         }
     }
+
+    public Potion getSelectedPotion() {
+        return selectedPotion;
+    }
+    public int getTheNumberOfPotions(){
+        return potions.size();
+    }
+    public void pickPotionFromPotions( Potion potion){
+        setSelectedPotion(potions.remove(potions.indexOf(potion)));
+    }
 }

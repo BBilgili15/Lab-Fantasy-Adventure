@@ -3,7 +3,9 @@ package com.codeclan.example.character;
 import com.codeclan.example.ITargetable;
 import com.codeclan.example.weapons.Weapon;
 
+
 import java.util.ArrayList;
+
 
 public class Knight extends Character{
 

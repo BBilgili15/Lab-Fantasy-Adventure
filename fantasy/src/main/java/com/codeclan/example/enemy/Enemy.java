@@ -44,6 +44,10 @@ public abstract class Enemy implements ITargetable {
             setAlive(false);
         }
     }
+    public void attack(ITargetable target){
+        int damage = getAttack();
+        target.receiveDamage(damage);
+    }
 
     public abstract int getReward();
 

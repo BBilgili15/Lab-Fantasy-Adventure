@@ -2,7 +2,7 @@ package com.codeclan.example.mythical_creature;
 
 import com.codeclan.example.ITargetable;
 
-public abstract class MythicalCreature {
+public abstract class MythicalCreature  implements ITargetable{
     private String name;
     private int attackPower;
     private int health;

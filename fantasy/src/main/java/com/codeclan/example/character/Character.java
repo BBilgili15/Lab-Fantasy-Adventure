@@ -5,6 +5,7 @@ import com.codeclan.example.IHealable;
 public abstract class Character implements IHealable {
     private  String name;
     private  int health;
+    private int maxHealth;
     private  int mana;
     private int attackPower;
     private  int spellPower;
@@ -15,6 +16,7 @@ public abstract class Character implements IHealable {
     public Character(String name, int health, int mana, int attackPower, int spellPower){
         this.name = name;
         this.health = health;
+        this.maxHealth = health;
         this.mana = mana;
         this.attackPower = attackPower;
         this.spellPower = spellPower;
@@ -67,6 +69,7 @@ public abstract class Character implements IHealable {
         return spellPower + "SP";
     }
 
+
     public void setAlive(Boolean alive) {
         this.alive = alive;
     }
@@ -80,7 +83,12 @@ public abstract class Character implements IHealable {
     }
 
     public void getHealed(int value) {
-        this.health += value;
+        int newHealth = health + value;
+        if (newHealth >= maxHealth){
+            setHealth(maxHealth);
+        }else {
+            setHealth(newHealth);
+        }
     }
 
     public void collectReward(int reward) {
