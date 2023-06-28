@@ -78,4 +78,8 @@ public abstract class Character implements IHealable {
     public void getHealed(int value) {
         this.health += value;
     }
+
+    public void collectReward(int reward) {
+        wallet += reward;
+    }
 }
