@@ -23,6 +23,11 @@ public class Wizard extends Character{
     public MythicalCreature getSelectedCreature() {
         return selectedCreature;
     }
+
+    public Spells getSelectedSpell() {
+        return selectedSpell;
+    }
+
     public void castSpell(ITargetable target){
         int damage = getSpellPower() + selectedSpell.getDamage();
         target.receiveDamage(damage);

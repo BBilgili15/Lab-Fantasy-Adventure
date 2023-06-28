@@ -7,8 +7,8 @@ public class Troll extends Enemy{
         this.enemyReward = EnemyReward.MP;
     }
 
-    public EnemyReward getReward() {
-        return enemyReward;
+    public int getReward() {
+        return enemyReward.getValue();
     }
 
     public void giveReward(Character character) {

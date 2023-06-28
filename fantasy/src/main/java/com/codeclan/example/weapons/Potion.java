@@ -1,6 +1,6 @@
 package com.codeclan.example.weapons;
 
-public class Potion implements IBaggable {
+public class Potion {
     private String name;
     private int value;
     private int sellPrice;

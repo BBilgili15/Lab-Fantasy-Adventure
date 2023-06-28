@@ -38,13 +38,13 @@ public abstract class Enemy implements ITargetable {
         this.health = health;
     }
 
-    public abstract void giveReward(Character character);
-
     public void receiveDamage(int damage) {
         setHealth(health -= damage);
-        if (health > 1) {
+        if (health < 1) {
             setAlive(false);
         }
     }
+
+    public abstract int getReward();
 
 }
