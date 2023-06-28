@@ -1,15 +1,16 @@
 package com.codeclan.example.character;
 
-import java.util.ArrayList;
+import com.codeclan.example.IHealable;
 
-public abstract class Character {
+public abstract class Character implements IHealable {
     private  String name;
-    private    int health;
+    private  int health;
     private  int mana;
     private int attackPower;
     private  int spellPower;
     private  Boolean alive;
-    private ArrayList<IBaggable>  bag;
+    private  int wallet;
+
 
     public Character(String name, int health, int mana, int attackPower, int spellPower){
         this.name = name;
@@ -17,8 +18,8 @@ public abstract class Character {
         this.mana = mana;
         this.attackPower = attackPower;
         this.spellPower = spellPower;
-        this.bag = new ArrayList<IBaggable>();
         this.alive = true;
+        this.wallet = 0;
     }
 
     public String getName() {
@@ -27,6 +28,18 @@ public abstract class Character {
 
     public int getHealth() {
         return health;
+    }
+
+    public Boolean getAlive() {
+        return alive;
+    }
+
+    public int getWallet() {
+        return wallet;
+    }
+
+    public void setWallet(int wallet) {
+        this.wallet = wallet;
     }
 
     public int getMana() {
@@ -53,13 +66,6 @@ public abstract class Character {
     public String getSpellPowerString(){
         return spellPower + "SP";
     }
-    public void addItemInBag(IBaggable item){
-        bag.add(item);
-    }
-
-    public IBaggable removeItemFromBag(IBaggable item){
-        return bag.remove(item);
-    }
 
     public void setAlive(Boolean alive) {
         this.alive = alive;
@@ -67,5 +73,9 @@ public abstract class Character {
 
     public void setHealth(int health) {
         this.health = health;
+    }
+
+    public void getHealed(int value) {
+        this.health += value;
     }
 }

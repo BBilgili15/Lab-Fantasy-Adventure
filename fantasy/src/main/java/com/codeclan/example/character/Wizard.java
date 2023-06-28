@@ -1,9 +1,12 @@
 package com.codeclan.example.character;
 
+import com.codeclan.example.ITargetable;
+import com.codeclan.example.mythical_creature.MythicalCreature;
+
 public class Wizard extends Character{
 
     private Spells selectedSpell;
-    private Creature selectedCreature;
+    private MythicalCreature selectedCreature;
 
     public Wizard(String name, int health, int mana, int attackPower, int spellPower) {
         super(name, health, mana, attackPower, spellPower);
@@ -13,18 +16,18 @@ public class Wizard extends Character{
         this.selectedSpell = selectedSpell;
     }
 
-    public void setSelectedCreature(Creature selectedCreature) {
+    public void setSelectedCreature(MythicalCreature selectedCreature) {
         this.selectedCreature = selectedCreature;
     }
 
-    public Creature getSelectedCreature() {
+    public MythicalCreature getSelectedCreature() {
         return selectedCreature;
     }
     public void castSpell(ITargetable target){
-        int damage = getSpellPower() + selectedSpell.getValue();
-        target.recieveDamage(damage);
+        int damage = getSpellPower() + selectedSpell.getDamage();
+        target.receiveDamage(damage);
     }
-    public void recieveDamage(int damage){
+    public void receiveDamage(int damage){
         setHealth(getHealth() - damage);
         if (getHealth() < 1) {
             setAlive(false);
