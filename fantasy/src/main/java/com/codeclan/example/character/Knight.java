@@ -1,8 +1,11 @@
 package com.codeclan.example.character;
 
+import com.codeclan.example.ITargetable;
+import com.codeclan.example.weapons.Weapon;
+
 public class Knight extends Character{
 
-    private Weapon selected;
+    private IBagga selected;
     public  int armor;
 
     public Knight(String name, int health, int mana, int attackPower, int spellPower, int armor) {

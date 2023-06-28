@@ -58,7 +58,7 @@ public abstract class Character {
     }
 
     public IBaggable removeItemFromBag(IBaggable item){
-        return bag.remove(item);
+        return bag.remove(bag.indexOf(item));
     }
 
     public void setAlive(Boolean alive) {
