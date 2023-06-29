@@ -49,6 +49,7 @@ public class ChallengeRoom extends Room {
                 ((Wizard) character).setSelectedSpell(spell);
                 ((Wizard) character).setSelectedCreature(mythicalCreature);
             } else if (character instanceof Knight) {
+                ((Knight) character).addWeapon(weapon);
                 ((Knight) character).setSelected(weapon);
             } else {
                 ((Cleric) character).setSelectedPotion(potion);
